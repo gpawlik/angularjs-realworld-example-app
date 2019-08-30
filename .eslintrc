@@ -1,0 +1,76 @@
+{
+  "extends": ["react-app"],
+  "parser": "babel-eslint",
+  "globals": {
+    "expect": true,
+    "render": true,
+    "shallowRender": true
+  },
+  "plugins": ["import", "flowtype", "react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "camelcase": "error",
+    "eqeqeq": ["error", "allow-null"],
+    "import/namespace": 0,
+    "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
+    "new-cap": [
+      "error",
+      {
+        "capIsNew": false
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": ["error"]
+      }
+    ],
+    "no-duplicate-imports": "error",
+    "no-else-return": "error",
+    "no-nested-ternary": "error",
+    "no-restricted-syntax": ["error", "SequenceExpression"],
+    "no-unneeded-ternary": "error",
+    "no-unused-vars": "error",
+    "no-dupe-keys": "error",
+    "no-var": "error",
+    "no-warning-comments": [
+      "warn",
+      {
+        "location": "anywhere",
+        "terms": ["fixme", "todo"]
+      }
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any"
+      }
+    ],
+    "react/display-name": "off",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowAllCaps": true
+      }
+    ],
+    "react/jsx-sort-props": [
+      "off",
+      {
+        "ignoreCase": true
+      }
+    ],
+    "react/no-string-refs": "error",
+    "react/prefer-es6-class": "error",
+    "react/require-render-return": "error",
+    "react/self-closing-comp": "error",
+    "react/sort-prop-types": "error",
+    "curly": "warn",
+    "comma-dangle": ["error", "always-multiline"]
+  }
+}

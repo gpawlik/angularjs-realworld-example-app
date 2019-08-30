@@ -7,7 +7,7 @@ var ngAnnotate    = require('browserify-ngannotate');
 var browserSync   = require('browser-sync').create();
 var rename        = require('gulp-rename');
 var templateCache = require('gulp-angular-templatecache');
-var uglify        = require('gulp-uglify');
+var uglify        = require('gulp-uglify-es').default;
 var merge         = require('merge-stream');
 
 // Where our files are located
@@ -30,7 +30,7 @@ var interceptErrors = function(error) {
 
 gulp.task('browserify', ['views'], function() {
   return browserify('./src/js/app.js')
-      .transform(babelify, {presets: ["es2015"]})
+      .transform(babelify, { presets: ["es2015", "stage-0", "react"] })
       .transform(ngAnnotate)
       .bundle()
       .on('error', interceptErrors)
