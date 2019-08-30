@@ -1,22 +1,20 @@
 import angular from 'angular';
+import { react2angular } from 'react2angular';
+
+import ArticleConfig from './article.config';
+import ArticleCtrl from './article.controller';
+import { Article } from './article';
 
 // Create the module where our functionality can attach to
-let articleModule = angular.module('app.article', []);
+const articleModule = angular.module('app.article', []);
 
 // Include our UI-Router config settings
-import ArticleConfig from './article.config';
 articleModule.config(ArticleConfig);
 
-
 // Controllers
-import ArticleCtrl from './article.controller';
 articleModule.controller('ArticleCtrl', ArticleCtrl);
 
-import ArticleActions from './article-actions.component';
-articleModule.component('articleActions', ArticleActions);
-
-import Comment from './comment.component';
-articleModule.component('comment', Comment);
-
+// Components
+articleModule.component('article', react2angular(Article, ['article'], ['User', 'Profile', 'Comments', 'Articles', '$state']));
 
 export default articleModule;
